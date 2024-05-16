@@ -1,4 +1,17 @@
 #include <iostream>
-#pragma once
+#include "Customer.h"
 using namespace std;
+
+class Pregnant : public Customer {
+
+    public:
+    Pregnant(string,int);
+    ~Pregnant();
+};
+
+
+Pregnant::~Pregnant()
+{
+}
+
 

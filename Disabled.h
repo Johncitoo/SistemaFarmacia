@@ -1,11 +1,12 @@
 #include <iostream>
-#pragma once
+#include "Customer.h"
 using namespace std;
 
 class Disabled : public Customer {
 
     public:
 
-    Disabled()
+    Disabled(string,int);
+    ~Disabled();
 
 };

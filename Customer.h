@@ -6,11 +6,12 @@ class Customer {
 
     protected:
 
-    string Name;
-    int edad;
+    string name;
+    int age;
 
     public:
 
     Customer(string, int);
+    virtual ~Customer();
 
 };  
