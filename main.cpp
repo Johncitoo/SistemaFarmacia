@@ -2,8 +2,18 @@
 
 using namespace std;
 
+void menu() {
+
+
+
+}
+
 int main()
 {
-    cout << "hola mundo" << endl;
+    ListCustomer();
+    ListProduct();
+    readProduct();
+
+    manu();
     return 0;
 }
