@@ -7,6 +7,11 @@ class ListNodes {
 
     private:
 
-    Node* head;
-    Node
-}
+        Node* head;
+
+    public:
+
+        ListNodes();
+        void add(Node*);
+
+};

@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 class Product {
@@ -14,5 +15,3 @@ class Product {
     Product(string,string,int);
     virtual ~Product();
 };
-
-
