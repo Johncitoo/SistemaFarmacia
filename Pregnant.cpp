@@ -3,11 +3,6 @@
 
 using namespace std;
 
-Pregnant::Pregnant(string name, int age) : Customer(name,age) {
-
-    this->name = name;
-    this->age = age;
-
-}
+Pregnant::Pregnant(string name, int age,string rut) : Customer(name,age,rut) {}
 
 Pregnant::~Pregnant(){}

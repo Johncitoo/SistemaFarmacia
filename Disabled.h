@@ -6,7 +6,7 @@ class Disabled : public Customer {
 
     public:
 
-    Disabled(string,int);
+    Disabled(string,int,string);
     ~Disabled();
 
 };

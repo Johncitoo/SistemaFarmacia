@@ -3,10 +3,6 @@
 
 using namespace std;
 
-Disabled::Disabled(string name, int age) : Customer(name,age) {
-
-    this->name = name;
-    this->age = age;
-}
+Disabled::Disabled(string name, int age, string rut) : Customer(name,age,rut) {}
 
 Disabled::~Disabled(){}

@@ -5,13 +5,7 @@ using namespace std;
 class Pregnant : public Customer {
 
     public:
-    Pregnant(string,int);
+    Pregnant(string,int,string);
     ~Pregnant();
 };
-
-
-Pregnant::~Pregnant()
-{
-}
-
 

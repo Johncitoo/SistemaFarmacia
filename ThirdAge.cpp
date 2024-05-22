@@ -3,11 +3,7 @@
 
 using namespace std;
 
-ThirdAge::ThirdAge(string name,int age) : Customer(name,age) {
-
-    this->name = name;
-    this->age = age;
-}
+ThirdAge::ThirdAge(string name,int age) : Customer(name,age,rut) {}
 
 ThirdAge::~ThirdAge()
 {
