@@ -4,6 +4,6 @@
 
 using namespace std;
 
-Medicines::Medicines(string* name,string* id,string* subCategory, string* type,int* price,int* numProducts):Product(*name, *id, *subCategory, *type, *price, *numProducts) {}
+Medicines::Medicines(string name,string id,string subCategory, string type,int price,int numProducts) : Product(name, id, subCategory, type, price, numProducts) {}
 
 Medicines::~Medicines(){}

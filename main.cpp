@@ -6,6 +6,8 @@
 
 // Inclusion of "product" classes
 #include "Product.cpp"
+#include "Customer.cpp"
+
 #include "BabyProducts.cpp"
 #include "MedicalEquipmentAndSupplies.cpp"
 #include "Medicines.cpp"
@@ -13,7 +15,7 @@
 #include "SupplementsAndVitamins.cpp"
 
 // Inclusion of "customer" classes
-#include "Customer.cpp"
+
 #include "ThirdAge.cpp"
 #include "Disabled.cpp"
 #include "Pregnant.cpp"
@@ -41,7 +43,7 @@ int main()
     return 0;
 }
 
-void readCustomer(ListCustomer listCustomer) {
+void readCustomer(ListCustomer& listCustomer) {
 
     // Opening the file
     ifstream arch("Customer.txt");
@@ -101,6 +103,7 @@ void readCustomer(ListCustomer listCustomer) {
             Customer* customer = new Customer(name,age,rut);
             listCustomer.addCustomer(customer);
 
+
         }
 
         parts.clear();
@@ -112,7 +115,7 @@ void readCustomer(ListCustomer listCustomer) {
 
 }
 
-void readProduct(ListNodes listNodes) {
+void readProduct(ListNodes& listNodes) {
 
        // Opening the file
     ifstream arch("Products.txt");
@@ -128,13 +131,13 @@ void readProduct(ListNodes listNodes) {
     string* part;
     vector<string> parts;
 
-    string* id;
-    string* category;
-    string* subCategory;
-    string* type;
-    string* name;
-    int* price;
-    int* numProducts;
+    string id;
+    string category;
+    string subCategory;
+    string type;
+    string name;
+    int price;
+    int numProducts;
 
 
     while (getline(arch, line)) {
@@ -147,29 +150,18 @@ void readProduct(ListNodes listNodes) {
 
         }
 
-        *id = parts[0];
-        *category = parts[1];
-        *subCategory = parts[2];
-        *type = parts[3];
-        *name = parts[4];
-        *price = stof(parts[5]);
-        *numProducts = stoi(parts[6]);
+        id = parts[0];
+        category = parts[1];
+        subCategory = parts[2];
+        type = parts[3];
+        name = parts[4];
+        price = stof(parts[5]);
+        numProducts = stoi(parts[6]);
         
-        if (*category == "medicine") {
+        if (category == "medicine") {
 
-            Product* product = new Medicines(*name,*id,*subCategory,*type,*price,*numProducts);
-
-        } else if () {
-
-        } else if {
-
-        } else if {
-
-        } else {
-
+            Product* product = new Medicines(name, id, subCategory, type, price, numProducts);
         }
-
-        parts.clear();
 
     }
 
