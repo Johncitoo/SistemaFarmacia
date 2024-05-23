@@ -8,7 +8,8 @@ class Medicines : public Product {
 
     public:
 
-    Medicines(string,string,int);
+    Medicines(string*,string*,string*,string*,int*,int*);
+    ~Medicines();
     
 
 };

@@ -6,12 +6,15 @@ class Product {
 
     protected:
 
-    string name;
-    string id;
-    int price;
+    string* name;
+    string* id;
+    string* subCategory;
+    string* type;
+    int* price;
+    int* numProducts;
 
     public:
 
-    Product(string,string,int);
+    Product(string*,string*, string*, string*, int*,int*);
     virtual ~Product();
 };

@@ -7,7 +7,7 @@ class SupplementsAndVitamins : public Product {
 
     public:
 
-    SupplementsAndVitamins(string,string,int);
+    SupplementsAndVitamins(string,string,int,int);
     ~SupplementsAndVitamins();
 };
 

@@ -20,21 +20,24 @@
 
 // Inclusion of list
 #include "ListCustomer.cpp"
+#include "ListNodes.cpp"
 
 using namespace std;
 
 void readCustomer(ListCustomer listCustomer);
+void readProduct(ListNodes listProduct);
 void menu();
 
 int main()
 {
 
     ListCustomer listCustomer;
-    readCustomer(listCustomer);
-    
-    readProduct();
+    ListNodes listProduct;
 
-    manu();
+    readCustomer(listCustomer);
+    readProduct(listProduct);
+
+    menu();
     return 0;
 }
 
@@ -51,7 +54,7 @@ void readCustomer(ListCustomer listCustomer) {
 
     string line;
 
-    string* part = new string;
+    string* part;
     vector<string> parts;
 
     string name;
@@ -100,8 +103,76 @@ void readCustomer(ListCustomer listCustomer) {
 
         }
 
+        parts.clear();
+
     }
 
+    delete part;
+    
 
+}
+
+void readProduct(ListNodes listNodes) {
+
+       // Opening the file
+    ifstream arch("Products.txt");
+
+    // File verification
+    if (!arch.is_open()) {
+        cout << "ERROR!!! NO SE ENCONTRO EL ARCHIVO" << endl;
+        return;
+    }
+
+    string line;
+
+    string* part;
+    vector<string> parts;
+
+    string* id;
+    string* category;
+    string* subCategory;
+    string* type;
+    string* name;
+    int* price;
+    int* numProducts;
+
+
+    while (getline(arch, line)) {
+
+        stringstream ss(line);
+        
+        while (getline(ss, *part, ';')) {
+
+            parts.push_back(*part);
+
+        }
+
+        *id = parts[0];
+        *category = parts[1];
+        *subCategory = parts[2];
+        *type = parts[3];
+        *name = parts[4];
+        *price = stof(parts[5]);
+        *numProducts = stoi(parts[6]);
+        
+        if (*category == "medicine") {
+
+            Product* product = new Medicines(*name,*id,*subCategory,*type,*price,*numProducts);
+
+        } else if () {
+
+        } else if {
+
+        } else if {
+
+        } else {
+
+        }
+
+        parts.clear();
+
+    }
+
+    delete part;
 
 }

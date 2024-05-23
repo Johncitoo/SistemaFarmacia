@@ -18,12 +18,7 @@ using namespace std;
  * `price` attribute of the `Product` class, which `PersonalCare` inherits from. This parameter
  * represents the price of the personal care product being created.
  */
-PersonalCare::PersonalCare(string name,string id,int price) : Product(name, id, price) {
-    this->name = name;
-    this->id = id;
-    this->price = price;
-
-}
+PersonalCare::PersonalCare(string name,string id,int price,int numProducts) : Product(name, id, price,numProducts) {}
 
 /**
  * The above function is a destructor for the PersonalCare class in C++.
