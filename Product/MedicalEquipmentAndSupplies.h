@@ -7,6 +7,6 @@ class MedicalEquipmentAndSupplies : public Product {
 
     public:
 
-    MedicalEquipmentAndSupplies(string,string,int);
+    MedicalEquipmentAndSupplies(string,string,string,string,int,int);
     ~MedicalEquipmentAndSupplies();
 };

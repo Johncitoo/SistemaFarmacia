@@ -8,7 +8,7 @@ class BabyProducts : public Product {
 
     public:
 
-    BabyProducts(string,string,int);
+    BabyProducts(string name,string id,string subCategory, string type,int price,int numProducts);
     ~BabyProducts();
 
 };
