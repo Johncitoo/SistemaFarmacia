@@ -7,6 +7,6 @@ class PersonalCare : public Product {
 
     public:
 
-    PersonalCare(string,string,int,int);
+    PersonalCare(string,string,string,string,int,int);
     ~PersonalCare();
 };

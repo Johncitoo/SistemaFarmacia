@@ -10,5 +10,6 @@ class BabyProducts : public Product {
 
     BabyProducts(string name,string id,string subCategory, string type,int price,int numProducts);
     ~BabyProducts();
+    
 
 };

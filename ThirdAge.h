@@ -2,14 +2,15 @@
 #include <iostream>
 #include "Customer.h"
 
-
 using namespace std;
 
-class Pregnant : public Customer {
-
+class ThirdAge : public Customer {
+    
     public:
 
-    Pregnant(string,int,string);
-    ~Pregnant();
+    ThirdAge(string,int,string);
+    ~ThirdAge();
 };
+
+
 

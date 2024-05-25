@@ -1,49 +1,12 @@
+#pragma once
+
 #include <iostream>
 
-#include <fstream>
-#include <sstream>
-#include <vector>
-
-// Inclusion of "product" classes
-#include "Product.cpp"
-#include "Customer.cpp"
-
-#include "BabyProducts.cpp"
-#include "MedicalEquipmentAndSupplies.cpp"
-#include "Medicines.cpp"
-#include "PersonalCare.cpp"
-#include "SupplementsAndVitamins.cpp"
-
-// Inclusion of "customer" classes
-
-#include "ThirdAge.cpp"
-#include "Disabled.cpp"
-#include "Pregnant.cpp"
-
-// Inclusion of list
-#include "ListCustomer.cpp"
-#include "ListNodes.cpp"
+#include "SystemPharmacy.h"
 
 using namespace std;
 
-void readCustomer(ListCustomer listCustomer);
-void readProduct(ListNodes listProduct);
-void menu();
-
-int main()
-{
-
-    ListCustomer listCustomer;
-    ListNodes listProduct;
-
-    readCustomer(listCustomer);
-    readProduct(listProduct);
-
-    menu();
-    return 0;
-}
-
-void readCustomer(ListCustomer& listCustomer) {
+void SystemPharmacy::readCustomer(ListCustomer& listCustomer) {
 
     // Opening the file
     ifstream arch("Customer.txt");
@@ -119,7 +82,7 @@ void readCustomer(ListCustomer& listCustomer) {
 
 }
 
-void readProduct(ListNodes& listNodes) {
+/* void SystemPharmacy::readProduct(ListNodes& listNodes) {
 
        // Opening the file
     ifstream arch("Products.txt");
@@ -165,27 +128,38 @@ void readProduct(ListNodes& listNodes) {
         if (*category == "medicine") {
 
             Product* product = new Medicines(*name, *id, *subCategory, *type, *price, *numProducts);
-            
+            Node* node = new Node(product);
+            listNodes.add(node);
 
         } else if (*category == "babyproduct") {
 
             Product* product = new BabyProducts(*name, *id, *subCategory, *type, *price, *numProducts);
+            Node* node = new Node(product);
+            listNodes.add(node);
 
         } else if (*category == "medicalequipmentandsupplies") {
 
             Product* product = new MedicalEquipmentAndSupplies(*name, *id, *subCategory, *type, *price, *numProducts);
+            Node* node = new Node(product);
+            listNodes.add(node);
 
         } else if (*category == "personalcare") {
 
             Product* product = new MedicalEquipmentAndSupplies(*name, *id, *subCategory, *type, *price, *numProducts);
+            Node* node = new Node(product);
+            listNodes.add(node);
 
         } else if (*category == "supplementsandvitamins") {
 
             Product* product = new SupplementsAndVitamins(*name, *id, *subCategory, *type, *price, *numProducts);
+            Node* node = new Node(product);
+            listNodes.add(node);
 
         }  else {
 
             Product* product = new Product(*name, *id, *subCategory, *type, *price, *numProducts);
+            Node* node = new Node(product);
+            listNodes.add(node);
         }
 
     }
@@ -199,4 +173,20 @@ void readProduct(ListNodes& listNodes) {
     delete price;
     delete numProducts;
 
+} */
+
+SystemPharmacy::SystemPharmacy() {
+
+    void readCustomer(ListCustomer listCustomer);
+    void readProduct(ListNodes listProduct);
+
 }
+
+SystemPharmacy::~SystemPharmacy() {
+
+
+}
+
+
+
+
