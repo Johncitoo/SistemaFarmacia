@@ -7,3 +7,4 @@ Customer::Customer(std::string name, int age, std::string rut) {
 }
 
 Customer::~Customer() {}
+

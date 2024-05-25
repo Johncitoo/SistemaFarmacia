@@ -4,11 +4,6 @@
 
 #include "ListCustomer.h"
 
-#include "Customer.cpp"
-#include "ThirdAge.cpp"
-#include "Disabled.cpp"
-#include "Pregnant.cpp"
-
 using namespace std;
 
 ListCustomer::ListCustomer() {

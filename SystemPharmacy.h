@@ -7,25 +7,25 @@
 #include <vector>
 
 // Inclusion of father classes
-#include "Customer.cpp"
-#include "Product.cpp"
+#include "Customer.h"
+#include "Product.h"
 
 
 // Inclusion of "Product" classes
-#include "BabyProducts.cpp"
-#include "MedicalEquipmentAndSupplies.cpp"
-#include "Medicines.cpp"
-#include "PersonalCare.cpp"
-#include "SupplementsAndVitamins.cpp"
+#include "BabyProducts.h"
+#include "MedicalEquipmentAndSupplies.h"
+#include "Medicines.h"
+#include "PersonalCare.h"
+#include "SupplementsAndVitamins.h"
 
 // Inclusion of "customer" classes
-#include "ThirdAge.cpp"
-#include "Disabled.cpp"
-#include "Pregnant.cpp"
+#include "ThirdAge.h"
+#include "Disabled.h"
+#include "Pregnant.h"
 
 // Inclusion of list
-#include "ListCustomer.cpp"
-#include "ListNodes.cpp"
+#include "ListCustomer.h"
+#include "ListNodes.h"
 
 using namespace std;
 

@@ -6,6 +6,18 @@
 
 using namespace std;
 
+SystemPharmacy::SystemPharmacy() {
+
+    void readCustomer(ListCustomer listCustomer);
+    void readProduct(ListNodes listProduct);
+
+}
+
+SystemPharmacy::~SystemPharmacy() {
+
+
+}
+
 void SystemPharmacy::readCustomer(ListCustomer& listCustomer) {
 
     // Opening the file
@@ -175,17 +187,7 @@ void SystemPharmacy::readCustomer(ListCustomer& listCustomer) {
 
 } */
 
-SystemPharmacy::SystemPharmacy() {
 
-    void readCustomer(ListCustomer listCustomer);
-    void readProduct(ListNodes listProduct);
-
-}
-
-SystemPharmacy::~SystemPharmacy() {
-
-
-}
 
 
 

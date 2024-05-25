@@ -2,10 +2,10 @@
 #include <iostream>
 #include <queue>
 
-#include "Customer.cpp"
-#include "ThirdAge.cpp"
-#include "Disabled.cpp"
-#include "Pregnant.cpp"
+#include "Customer.h"
+#include "ThirdAge.h"
+#include "Disabled.h"
+#include "Pregnant.h"
 
 using namespace std;
 
