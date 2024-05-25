@@ -1,13 +1,9 @@
-#include <iostream>
 #include "Customer.h"
-using namespace std;
 
-Customer::Customer(string name, int age, string rut) {
-
+Customer::Customer(std::string name, int age, std::string rut) {
     this->name = name;
     this->age = age;
     this->rut = rut;
-
 }
 
 Customer::~Customer() {}
