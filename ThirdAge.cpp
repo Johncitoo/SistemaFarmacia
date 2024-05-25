@@ -1,10 +1,8 @@
-#include <iostream>
 #include "ThirdAge.h"
+#include <iostream>
 
 using namespace std;
 
-ThirdAge::ThirdAge(string name,int age,string rut) : Customer(name,age,rut) {}
+ThirdAge::ThirdAge(string name,string rut,int age) : Customer(name,rut,age) {}
 
-ThirdAge::~ThirdAge()
-{
-}
+ThirdAge::~ThirdAge(){}

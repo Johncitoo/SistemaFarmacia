@@ -1,14 +1,17 @@
 #pragma once
-#include <iostream>
 #include "Customer.h"
+#include <iostream>
 
 using namespace std;
 
 class Pregnant : public Customer {
 
+    private:
+
     public:
 
-    Pregnant(string,int,string);
+    Pregnant(string,string,int);
     ~Pregnant();
-};
 
+
+};

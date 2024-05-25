@@ -1,13 +1,20 @@
 #pragma once
-#include <string>
+
+#include <iostream>
+
+using namespace std;
 
 class Customer {
-protected:
-    std::string name;
-    int age;
-    std::string rut;
 
-public:
-    Customer(std::string name, int age, std::string rut);
+    protected:
+
+    string name;
+    string rut;
+    int age;
+
+    public:
+
+    Customer(string,string,int);
     virtual ~Customer();
+
 };

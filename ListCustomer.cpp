@@ -1,14 +1,13 @@
-#pragma once
+#include "ListCustomer.h"
 #include <iostream>
 #include <queue>
-
-#include "ListCustomer.h"
 
 using namespace std;
 
 ListCustomer::ListCustomer() {
 
 }
+
 
 /**
  * The function `addThirdAge` adds a customer to a list of third-age customers in a C++ program.
@@ -53,42 +52,4 @@ void ListCustomer::addCustomer(Customer* customer) {
 
     this->listCustomer.push(customer);
     
-}
-
-/**
- * The function `getCustomer` returns a Customer object from different priority queues based on
- * specific customer.
- * 
- * @return The `getCustomer` function returns a pointer to a `Customer` object. The function checks
- * different lists (`listThirdAge`, `listDisabled`, `listPregnant`, and `listCustomer`) in a specific
- * order and returns the first customer from the first non-empty list it encounters.
- */
-Customer* ListCustomer:: getCustomer() {
-
-    if (!listThirdAge.empty()) {
-        
-        Customer* customer = listThirdAge.front();
-        listThirdAge.pop();
-        return customer;
-
-    } else if (!listDisabled.empty()) {
-
-        Customer* customer = listDisabled.front();
-        listDisabled.pop();
-        return customer;
-
-    } else if (!listPregnant.empty()) {
-
-        Customer* customer = listPregnant.front();
-        listPregnant.pop();
-        return customer;
-
-    } else {
-
-        Customer* customer = listCustomer.front();
-        listCustomer.pop();
-        return customer;
-
-
-    }
 }

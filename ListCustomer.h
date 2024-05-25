@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <queue>
 
@@ -21,10 +22,14 @@ class ListCustomer {
     public:
 
     ListCustomer();
+
+    // add Customer by type
+
     void addThirdAge(Customer*);
     void addDisabled(Customer*);
     void addPregnant(Customer*);
     void addCustomer(Customer*);
-    Customer* getCustomer();
 
+    
+    
 };

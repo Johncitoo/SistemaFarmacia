@@ -1,8 +1,8 @@
-#include <iostream>
 #include "Pregnant.h"
+#include <iostream>
 
 using namespace std;
 
-Pregnant::Pregnant(string name, int age,string rut) : Customer(name,age,rut) {}
+Pregnant::Pregnant(string name,string rut,int age) : Customer(name,rut,age) {}
 
 Pregnant::~Pregnant(){}

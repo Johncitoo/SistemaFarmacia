@@ -1,26 +1,16 @@
-#pragma once
-
-#include <iostream>
-
 #include "SystemPharmacy.h"
+#include <iostream>
 
 using namespace std;
 
-SystemPharmacy::SystemPharmacy() {
+SystemPharmacy::SystemPharmacy(){
 
-    void readCustomer(ListCustomer listCustomer);
-    void readProduct(ListNodes listProduct);
-
+    saveCustomer(this->listCustomer);
 }
 
-SystemPharmacy::~SystemPharmacy() {
+void SystemPharmacy::saveCustomer(ListCustomer& listCustomer) {
 
-
-}
-
-void SystemPharmacy::readCustomer(ListCustomer& listCustomer) {
-
-    // Opening the file
+       // Opening the file
     ifstream arch("Customer.txt");
 
     // File verification
@@ -60,22 +50,22 @@ void SystemPharmacy::readCustomer(ListCustomer& listCustomer) {
 
         if (*age > 60) {
 
-            Customer* customer = new ThirdAge(*name,*age,*rut);
+            Customer* customer = new ThirdAge(*name,*rut,*age);
             listCustomer.addThirdAge(customer);
 
         } else if (*disabled == "true") {
 
-            Customer* customer = new Disabled(*name,*age,*rut);
+            Customer* customer = new Disabled(*name,*rut,*age);
             listCustomer.addDisabled(customer);
 
         } else if (*pregnant == "true") {
 
-            Customer* customer = new Pregnant(*name,*age,*rut);
+            Customer* customer = new Pregnant(*name,*rut,*age);
             listCustomer.addPregnant(customer);
 
         } else {
 
-            Customer* customer = new Customer(*name,*age,*rut);
+            Customer* customer = new Customer(*name,*rut,*age);
             listCustomer.addCustomer(customer);
 
 
@@ -93,102 +83,3 @@ void SystemPharmacy::readCustomer(ListCustomer& listCustomer) {
     delete pregnant;
 
 }
-
-/* void SystemPharmacy::readProduct(ListNodes& listNodes) {
-
-       // Opening the file
-    ifstream arch("Products.txt");
-
-    // File verification
-    if (!arch.is_open()) {
-        cout << "ERROR!!! NO SE ENCONTRO EL ARCHIVO" << endl;
-        return;
-    }
-
-    string line;
-
-    string* part;
-    vector<string> parts;
-
-    string* id;
-    string* category;
-    string* subCategory;
-    string* type;
-    string* name;
-    int* price;
-    int* numProducts;
-
-
-    while (getline(arch, line)) {
-
-        stringstream ss(line);
-        
-        while (getline(ss, *part, ';')) {
-
-            parts.push_back(*part);
-
-        }
-
-        *id = parts[0];
-        *category = parts[1];
-        *subCategory = parts[2];
-        *type = parts[3];
-        *name = parts[4];
-        *price = stof(parts[5]);
-        *numProducts = stoi(parts[6]);
-        
-        if (*category == "medicine") {
-
-            Product* product = new Medicines(*name, *id, *subCategory, *type, *price, *numProducts);
-            Node* node = new Node(product);
-            listNodes.add(node);
-
-        } else if (*category == "babyproduct") {
-
-            Product* product = new BabyProducts(*name, *id, *subCategory, *type, *price, *numProducts);
-            Node* node = new Node(product);
-            listNodes.add(node);
-
-        } else if (*category == "medicalequipmentandsupplies") {
-
-            Product* product = new MedicalEquipmentAndSupplies(*name, *id, *subCategory, *type, *price, *numProducts);
-            Node* node = new Node(product);
-            listNodes.add(node);
-
-        } else if (*category == "personalcare") {
-
-            Product* product = new MedicalEquipmentAndSupplies(*name, *id, *subCategory, *type, *price, *numProducts);
-            Node* node = new Node(product);
-            listNodes.add(node);
-
-        } else if (*category == "supplementsandvitamins") {
-
-            Product* product = new SupplementsAndVitamins(*name, *id, *subCategory, *type, *price, *numProducts);
-            Node* node = new Node(product);
-            listNodes.add(node);
-
-        }  else {
-
-            Product* product = new Product(*name, *id, *subCategory, *type, *price, *numProducts);
-            Node* node = new Node(product);
-            listNodes.add(node);
-        }
-
-    }
-
-    delete part;
-    delete id;
-    delete category;
-    delete subCategory;
-    delete type;
-    delete name;
-    delete price;
-    delete numProducts;
-
-} */
-
-
-
-
-
-

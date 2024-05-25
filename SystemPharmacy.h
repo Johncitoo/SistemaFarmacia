@@ -6,50 +6,43 @@
 #include <sstream>
 #include <vector>
 
-// Inclusion of father classes
-#include "Customer.h"
-#include "Product.h"
+// Father class
 
+#include "Customer.cpp"
+#include "Product.cpp"
 
-// Inclusion of "Product" classes
-#include "BabyProducts.h"
-#include "MedicalEquipmentAndSupplies.h"
-#include "Medicines.h"
-#include "PersonalCare.h"
-#include "SupplementsAndVitamins.h"
+// Sons class Customer
 
-// Inclusion of "customer" classes
-#include "ThirdAge.h"
-#include "Disabled.h"
-#include "Pregnant.h"
+#include "Disabled.cpp"
+#include "Pregnant.cpp"
+#include "ThirdAge.cpp"
 
-// Inclusion of list
-#include "ListCustomer.h"
-#include "ListNodes.h"
+// Sons class Product
+
+#include "BabyProduct.cpp"
+#include "MedEquipSupp.cpp"
+#include "Medicine.cpp"
+#include "ProductCare.cpp"
+#include "SuppVit.cpp"
+
+// Lists
+
+#include "ListCustomer.cpp"
+
 
 using namespace std;
+
 
 class SystemPharmacy {
 
     private:
 
     ListCustomer listCustomer;
-    //ListNodes listProduct;
 
     public:
 
-    // Read files
-
-    void readCustomer(ListCustomer&);
-    //void readProduct(ListNodes&);
-
     SystemPharmacy();
-    ~SystemPharmacy();
+    void saveCustomer(ListCustomer&);
 
-    
-
-    // MENU
-
-    void menu(ListCustomer,ListNodes);
 
 };

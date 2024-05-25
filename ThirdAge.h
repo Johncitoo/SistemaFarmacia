@@ -1,16 +1,17 @@
 #pragma once
-#include <iostream>
 #include "Customer.h"
+#include <iostream>
 
 using namespace std;
 
 class ThirdAge : public Customer {
-    
+
+    private:
+
     public:
 
-    ThirdAge(string,int,string);
+    ThirdAge(string,string,int);
     ~ThirdAge();
+
+
 };
-
-
-
