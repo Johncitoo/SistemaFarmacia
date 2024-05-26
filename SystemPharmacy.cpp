@@ -76,6 +76,7 @@ void SystemPharmacy::saveCustomer(ListCustomer& listCustomer) {
 
     }
 
+    cout<<"Probando";
     delete part;
     delete name;
     delete age;
@@ -83,4 +84,17 @@ void SystemPharmacy::saveCustomer(ListCustomer& listCustomer) {
     delete disabled;
     delete pregnant;
 
+}
+
+int SystemPharmacy::prueba(){
+
+    Product* product1 = new ProductCare("Product 1", "001", "SubCategory A", "Type X", 100, 10);
+    Product* product2 = new ProductCare("Product 2", "002", "SubCategory B", "Type Y", 200, 20);
+    
+    hashMap.insert(product1->getId(), product1);
+    hashMap.insert(product2->getId(), product2);
+
+    cout << "Total de productos: " << hashMap.getSize() << endl;
+
+    return hashMap.getSize();
 }

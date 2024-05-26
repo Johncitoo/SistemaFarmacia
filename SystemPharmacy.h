@@ -30,7 +30,7 @@
 #include "ListCustomer.cpp"
 
 // HashMap
-#include "Hashmap.cpp"
+#include "HashMap.cpp"
 
 using namespace std;
 
@@ -47,6 +47,6 @@ class SystemPharmacy {
     SystemPharmacy(int size);
     void saveCustomer(ListCustomer&);
 
-
+    int prueba();
 
 };
