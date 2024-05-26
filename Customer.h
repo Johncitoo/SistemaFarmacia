@@ -11,11 +11,18 @@ class Customer {
     string name;
     string rut;
     int age;
+    string ifDisable;
+    string ifPregnant;
 
     public:
 
-    Customer(string,string,int);
+    Customer(string,string,int,string,string);
     string getName();
+    string getRut();
+    int getAge();
+    string getIfDisable();
+    string getIfPregnant();
+
     virtual ~Customer();
 
 };

@@ -10,7 +10,7 @@ class Disabled : public Customer {
 
     public:
 
-    Disabled(string,string,int);
+    Disabled(string,string,int,string,string);
     ~Disabled();
 
 

@@ -82,3 +82,19 @@ Customer* ListCustomer::getNextCustomer() {
 
     } 
 }
+
+queue<Customer*> ListCustomer::getDisabled(){
+    return listDisabled;
+}
+
+queue<Customer*> ListCustomer::getPregnant(){
+    return listPregnant;
+}
+
+queue<Customer*> ListCustomer::getThirdAge(){
+    return listThirdAge;
+}
+
+queue<Customer*> ListCustomer::getListCustomer(){
+    return listCustomer;
+}

@@ -10,7 +10,7 @@ class ThirdAge : public Customer {
 
     public:
 
-    ThirdAge(string,string,int);
+    ThirdAge(string,string,int,string,string);
     ~ThirdAge();
 
 

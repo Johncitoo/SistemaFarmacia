@@ -50,22 +50,22 @@ void SystemPharmacy::saveCustomer(ListCustomer& listCustomer) {
 
         if (age > 60) {
 
-            Customer* customer = new ThirdAge(name,rut,age);
+            Customer* customer = new ThirdAge(name,rut,age,disabled,pregnant);
             listCustomer.addThirdAge(customer);
 
         } else if (disabled == "true") {
 
-            Customer* customer = new Disabled(name,rut,age);
+            Customer* customer = new Disabled(name,rut,age,disabled,pregnant);
             listCustomer.addDisabled(customer);
 
         } else if (pregnant == "true") {
 
-            Customer* customer = new Pregnant(name,rut,age);
+            Customer* customer = new Pregnant(name,rut,age,disabled,pregnant);
             listCustomer.addPregnant(customer);
 
         } else {
 
-            Customer* customer = new Customer(name,rut,age);
+            Customer* customer = new Customer(name,rut,age,disabled,pregnant);
             listCustomer.addCustomer(customer);
 
         }
@@ -226,7 +226,7 @@ void SystemPharmacy::newCustomer(ListCustomer& listCustomer) {
 
     if (age > 60) {
 
-        ThirdAge* newCustomer = new ThirdAge(name, rut, age);
+        ThirdAge* newCustomer = new ThirdAge(name, rut, age,"false","false");
         listCustomer.addThirdAge(newCustomer);
         
     } else {
@@ -236,7 +236,7 @@ void SystemPharmacy::newCustomer(ListCustomer& listCustomer) {
         
         if (input == 1) {
 
-            Disabled* newCustomer = new Disabled(name, rut, age);
+            Disabled* newCustomer = new Disabled(name, rut, age,"true","false");
             listCustomer.addDisabled(newCustomer);
         } else {
 
@@ -245,12 +245,12 @@ void SystemPharmacy::newCustomer(ListCustomer& listCustomer) {
 
             if (input == 1) {
 
-                Pregnant* newCustomer = new Pregnant(name, rut, age);
+                Pregnant* newCustomer = new Pregnant(name, rut, age,"false","true");
                 listCustomer.addPregnant(newCustomer);
 
             } else {
 
-                Customer* newCustomer = new Customer(name, rut, age);
+                Customer* newCustomer = new Customer(name, rut, age,"false","false");
                 listCustomer.addCustomer(newCustomer);
             }
         }
@@ -389,14 +389,67 @@ void SystemPharmacy::saveProductTxt(vector<Product*> listProduct){
         exit(1);
     }
 
-    cout<<"Prueba 1";
 
     for (size_t i = 0; i < listProduct.size(); i++)
     {
-        cout<<"Prueba dentro del for";
         file<<listProduct[i]->getId()<<";"<<listProduct[i]->getCategory()<<";"<<listProduct[i]->getSubCategory()<<";"<<listProduct[i]->getType()
         <<";"<<listProduct[i]->getName()<<";"<<listProduct[i]->getPrice()<<";"<<listProduct[i]->getNumProducts()<<endl;
     }
+}
+
+void SystemPharmacy::saveCustomerTxt(ListCustomer& ListCustomer){
+
+    queue<Customer*> listThirdAge = ListCustomer.getThirdAge();
+    queue<Customer*> listDisabled = ListCustomer.getDisabled();
+    queue<Customer*> listPregnant = ListCustomer.getPregnant();
+    queue<Customer*> listCustomer = ListCustomer.getListCustomer();
+
+    ofstream file;
+
+    file.open("Customer.txt",ios::out); //open the file
+
+    if (file.fail())
+    {
+        cout<< "Error al abrir el archivo"<<endl;
+        exit(1);
+    }
+
+    while(!listDisabled.empty())
+    {
+        Customer* customer = listDisabled.front();
+
+        file<<customer->getName()<<";"<<customer->getAge()<<";"<<customer->getRut()<<";"<<customer->getIfDisable()<<";"<<customer->getIfPregnant()<<endl;
+    
+        listDisabled.pop();
+    }
+
+    while(!listPregnant.empty())
+    {
+        Customer* customer = listPregnant.front();
+
+        file<<customer->getName()<<";"<<customer->getAge()<<";"<<customer->getRut()<<";"<<customer->getIfDisable()<<";"<<customer->getIfPregnant()<<endl;
+    
+        listPregnant.pop();
+    }
+
+    while(!listThirdAge.empty())
+    {
+        Customer* customer = listThirdAge.front();
+
+        file<<customer->getName()<<";"<<customer->getAge()<<";"<<customer->getRut()<<";"<<customer->getIfDisable()<<";"<<customer->getIfPregnant()<<endl;
+    
+        listThirdAge.pop();
+    }
+
+    while(!listCustomer.empty())
+    {
+        Customer* customer = listCustomer.front();
+
+        file<<customer->getName()<<";"<<customer->getAge()<<";"<<customer->getRut()<<";"<<customer->getIfDisable()<<";"<<customer->getIfPregnant()<<endl;
+    
+        listCustomer.pop();
+    }
+
 }
 
 void SystemPharmacy::menu() {
@@ -465,9 +518,11 @@ void SystemPharmacy::menu() {
             break;
         }
 
+        saveProductTxt(hashmap.getAllProducts());
+        saveCustomerTxt(this->listCustomer);
         
     }
-    saveProductTxt(hashmap.getAllProducts());
+    
 
 }
 

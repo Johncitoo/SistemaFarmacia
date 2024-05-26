@@ -10,7 +10,7 @@ class Pregnant : public Customer {
 
     public:
 
-    Pregnant(string,string,int);
+    Pregnant(string,string,int,string,string);
     ~Pregnant();
 
 

@@ -30,6 +30,10 @@ class ListCustomer {
     void addPregnant(Customer*);
     void addCustomer(Customer*);
     Customer* getNextCustomer();
+    queue<Customer*> getThirdAge();
+    queue<Customer*> getDisabled();
+    queue<Customer*> getPregnant();
+    queue<Customer*> getListCustomer();
     
     
 };
