@@ -19,4 +19,12 @@ class Product {
     Product(string,string,string,string,int,int);
     virtual ~Product();
 
+    public:
+    string getName();
+    string getId();
+    string getSubCategory();
+    string getType();
+    int getPrice();
+    int getNumProducts();
+
 };

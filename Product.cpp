@@ -16,3 +16,27 @@ Product::Product(string name,string id,string subCategory,string type,int proce,
 
 Product::~Product() {
 }
+
+string Product::getName() {
+    return name;
+}
+
+string Product::getId() {
+    return id;
+}
+
+string Product::getSubCategory() {
+    return subCategory;
+}
+
+string Product::getType() {
+    return type;
+}
+
+int Product::getPrice() {
+    return price;
+}
+
+int Product::getNumProducts() {
+    return numProducts;
+}
