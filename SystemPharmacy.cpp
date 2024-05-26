@@ -302,6 +302,7 @@ void SystemPharmacy::printAllProducts(HashMap& hashmap) {
 }
 
 void SystemPharmacy::addProductToHashMap(HashMap& hashmap) {
+
     string name;
     string id;
     string subCategory;
@@ -419,6 +420,7 @@ void SystemPharmacy::menu() {
             break;
         
         case 6:
+        
             exitOption = false;
             break;
         
