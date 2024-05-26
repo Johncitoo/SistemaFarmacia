@@ -10,6 +10,7 @@ class Product {
     
     string name;
     string id;
+    string category;
     string subCategory;
     string type;
 
@@ -18,7 +19,7 @@ class Product {
 
     public:
 
-    Product(string,string,string,string,int,int);
+    Product(string,string,string,string,int,int,string);
     ~Product();
     void subtractProduct();
 
@@ -29,6 +30,7 @@ class Product {
     string getType() const;
     int getPrice() const;
     int getNumProducts() const;
+    string getCategory()const;
 
     // Setters
     void setName(const string& name);
@@ -37,5 +39,5 @@ class Product {
     void setType(const string& type);
     void setPrice(int price);
     void setNumProducts(int numProducts);
-
+    void setCategory(string category);
 };

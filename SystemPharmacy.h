@@ -48,6 +48,7 @@ class SystemPharmacy {
     void productSearchMenu(HashMap& hashmap);
     void printAllProducts(HashMap&);
     void addProductToHashMap(HashMap&);
+    void saveProductTxt(vector<Product*> listProduct);
 
     public:
 

@@ -100,7 +100,11 @@ void SystemPharmacy::saveProduct(HashMap hashmap) {
     int price;
     int numProducts;
 
+    
+
     while (getline(arch, line)) {
+
+        
 
         stringstream ss(line);
         
@@ -110,42 +114,47 @@ void SystemPharmacy::saveProduct(HashMap hashmap) {
 
         }
 
+        cout<<"hola prueba123";
+
         id = parts[0];
         category = parts[1];
         subCategory = parts[2];
         type = parts[3];
         name = parts[4];
-        
+
         price = stoi(parts[5]);
+        cout<<"antes del cambio"<<endl;
+        cout<<name<<endl;
+
         numProducts = stoi(parts[6]);
 
-        
+        cout<<"Despues del cambio";
 
         if (category == "medicine") {
 
-            Product* product = new Medicine(name,id,subCategory,type,price,numProducts);
+            Product* product = new Medicine(name,id,subCategory,type,price,numProducts,category);
         
             hashmap.insert(name,product);
         
 
         } else if (category == "babyproduct") {
 
-            Product* product = new BabyProduct(name,id,subCategory,type,price,numProducts);
+            Product* product = new BabyProduct(name,id,subCategory,type,price,numProducts,category);
             this->hashmap.insert(name,product);
 
         } else if (category == "medicalequipmentandsupplies") {
 
-            Product* product = new MedEquipSupp(name,id,subCategory,type,price,numProducts);
+            Product* product = new MedEquipSupp(name,id,subCategory,type,price,numProducts,category);
             this->hashmap.insert(name,product);
 
         } else if (category == "personalcare") {
 
-            Product* product = new ProductCare(name,id,subCategory,type,price,numProducts);
+            Product* product = new ProductCare(name,id,subCategory,type,price,numProducts,category);
             this->hashmap.insert(name,product);
 
         } else if (category == "supplementandvitamins") {
 
-            Product* product = new SuppVit(name,id,subCategory,type,price,numProducts);
+            Product* product = new SuppVit(name,id,subCategory,type,price,numProducts,category);
             this->hashmap.insert(name,product);
 
         }
@@ -310,6 +319,7 @@ void SystemPharmacy::addProductToHashMap(HashMap& hashmap) {
     int price;
     int numProducts;
     int productType;
+    string category;
 
     cout << "\nSeleccione el tipo de producto a agregar:\n";
     cout << "1. Productos para bebe\n";
@@ -337,22 +347,26 @@ void SystemPharmacy::addProductToHashMap(HashMap& hashmap) {
 
     switch (productType) {
         case 1:
-            newProduct = new BabyProduct(name, id, subCategory, type, price, numProducts);
+            newProduct = new BabyProduct(name, id, subCategory, type, price, numProducts,"babyproduct");
             break;
         case 2:
-            newProduct = new MedEquipSupp(name, id, subCategory, type, price, numProducts);
+            newProduct = new MedEquipSupp(name, id, subCategory, type, price, numProducts,"medicalequipmentandsupplies");
             break;
         case 3:
-            newProduct = new Medicine(name, id, subCategory, type, price, numProducts);
+            newProduct = new Medicine(name, id, subCategory, type, price, numProducts,"medicine");
             break;
         case 4:
-            newProduct = new ProductCare(name, id, subCategory, type, price, numProducts);
+            newProduct = new ProductCare(name, id, subCategory, type, price, numProducts,"personalcare");
             break;
         case 5:
-            newProduct = new SuppVit(name, id, subCategory, type, price, numProducts);
+            newProduct = new SuppVit(name, id, subCategory, type, price, numProducts,"supplementandvitamins");
             break;
         case 6:
-            newProduct = new Product(name, id, subCategory, type, price, numProducts);
+
+            cout<<"Ingrese la categoria del producto";
+            cin >> category;
+
+            newProduct = new Product(name, id, subCategory, type, price, numProducts,category);
             break;
         default:
             cout << "\nTipo de producto no valido. No se agrego ningun producto.\n";
@@ -364,12 +378,35 @@ void SystemPharmacy::addProductToHashMap(HashMap& hashmap) {
     cout << "\nProducto agregado exitosamente!\n";
 }
 
+void SystemPharmacy::saveProductTxt(vector<Product*> listProduct){
+    ofstream file;
+
+    file.open("Product.txt",ios::out); //open the file
+
+    if (file.fail())
+    {
+        cout<< "Error al abrir el archivo"<<endl;
+        exit(1);
+    }
+
+    cout<<"Prueba 1";
+
+    for (size_t i = 0; i < listProduct.size(); i++)
+    {
+        cout<<"Prueba dentro del for";
+        file<<listProduct[i]->getId()<<";"<<listProduct[i]->getCategory()<<";"<<listProduct[i]->getSubCategory()<<";"<<listProduct[i]->getType()
+        <<";"<<listProduct[i]->getName()<<";"<<listProduct[i]->getPrice()<<";"<<listProduct[i]->getNumProducts()<<endl;
+    }
+}
+
 void SystemPharmacy::menu() {
 
     bool exitOption = true;
 
     while (exitOption) {
 
+        
+        
         int option;
 
         cout << "\n\n---------- MENU ----------\n";
@@ -378,7 +415,7 @@ void SystemPharmacy::menu() {
         cout << "3. Revisar producto en bodega\n";
         cout << "4. Ver todos los productos en bodega\n";
         cout << "5. Agregar producto a la bodega\n";
-        cout << "5. Terminar y guardar\n";
+        cout << "6. Terminar y guardar\n";
         cout << "\n--------------------------\n";
 
         cin >> option;
@@ -428,10 +465,13 @@ void SystemPharmacy::menu() {
             break;
         }
 
+        
     }
-
+    saveProductTxt(hashmap.getAllProducts());
 
 }
+
+
 
 
 

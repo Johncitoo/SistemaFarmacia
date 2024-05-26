@@ -11,7 +11,7 @@ class BabyProduct : public Product {
 
     public:
 
-    BabyProduct(string,string,string,string,int,int);
+    BabyProduct(string,string,string,string,int,int,string);
     ~BabyProduct();
 
 };

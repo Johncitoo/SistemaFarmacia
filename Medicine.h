@@ -11,7 +11,7 @@ class Medicine : public Product {
 
     public:
 
-    Medicine(string,string,string,string,int,int);
+    Medicine(string,string,string,string,int,int,string);
     ~Medicine();
 
 };

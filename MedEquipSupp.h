@@ -11,7 +11,7 @@ class MedEquipSupp : public Product {
 
     public:
 
-    MedEquipSupp(string,string,string,string,int,int);
+    MedEquipSupp(string,string,string,string,int,int,string);
     ~MedEquipSupp();
 
 };

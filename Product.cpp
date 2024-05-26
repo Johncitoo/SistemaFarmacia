@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Product::Product(string name,string id,string subCategory,string type,int price,int numProducts) {
+Product::Product(string name,string id,string subCategory,string type,int price,int numProducts,string category) {
 
     this->name = name;
     this->id = id;
@@ -11,6 +11,7 @@ Product::Product(string name,string id,string subCategory,string type,int price,
     this->type = type;
     this->price = price;
     this->numProducts = numProducts;
+    this->category= category;
     
 }
 
@@ -48,6 +49,10 @@ int Product::getNumProducts() const {
     return numProducts;
 }
 
+string Product::getCategory() const{
+    return category;
+}
+
 // Setters
 void Product::setName(const string& name) {
     this->name = name;
@@ -71,4 +76,8 @@ void Product::setPrice(int price) {
 
 void Product::setNumProducts(int numProducts) {
     this->numProducts = numProducts;
+}
+
+void Product::setCategory(string category){
+    this->category= category;
 }

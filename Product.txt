@@ -4,7 +4,7 @@
 2345;personalcare;shampoo;organic;Herbal Essences;9;200
 8765;supplementandvitamins;multivitamin;capsule;Centrum;16;150
 9876;medicine;painreliever;gel;Ibuprofen;7;80
-3456;babyproduct;bottle;glass;Dr. Brown's;5;30
+3456;babyproduct;bottle;glass;Dr.Brown's;5;30
 5678;medicalequipmentandsupplies;thermometer;digital;Braun;20;50
 1234;personalcare;toothpaste;fluoride;Colgate;3;300
 6543;supplementandvitamins;fishoil;softgel;Nature Made;13;100

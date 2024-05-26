@@ -11,7 +11,7 @@ class ProductCare : public Product {
 
     public:
 
-    ProductCare(string,string,string,string,int,int);
+    ProductCare(string,string,string,string,int,int,string);
     ~ProductCare();
 
 };

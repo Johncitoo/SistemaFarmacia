@@ -11,7 +11,7 @@ class SuppVit : public Product {
 
     public:
 
-    SuppVit(string,string,string,string,int,int);
+    SuppVit(string,string,string,string,int,int,string);
     ~SuppVit();
 
 };
