@@ -4,12 +4,32 @@
 
 using namespace std;
 
+/**
+ * The function `SystemPharmacy::SystemPharmacy` is a constructor for the `SystemPharmacy` class.
+ * It initializes an instance of the `SystemPharmacy` object by performing the following actions:
+ * 1. Calls the `saveCustomer` function, passing the `listCustomer` as an argument. This function
+ *    likely saves customer data to a storage medium (e.g., file, database).
+ * 2. Calls the `saveProduct` function, passing the `hashmap` as an argument. This function likely
+ *    saves product data to a storage medium (e.g., file, database).
+ * 
+ * Note: The specific implementation details of the `saveCustomer` and `saveProduct` functions are
+ * not provided here.
+ */
 SystemPharmacy::SystemPharmacy(){
 
     saveCustomer(this->listCustomer);
     saveProduct(this->hashmap);
 }
 
+/**
+ * The function `SystemPharmacy::saveCustomer` reads customer data from a file named "Customer.txt"
+ * and initializes the appropriate customer objects based on the data read. It populates the provided
+ * `listCustomer` with instances of `Customer`, `ThirdAge`, `Disabled`, or `Pregnant` classes,
+ * depending on the customer's age and other attributes.
+ * 
+ * @param listCustomer A reference to the `ListCustomer` object where the customer data will be
+ * stored.
+ */
 void SystemPharmacy::saveCustomer(ListCustomer& listCustomer) {
 
     // Opening the file
@@ -76,6 +96,14 @@ void SystemPharmacy::saveCustomer(ListCustomer& listCustomer) {
 
 }
 
+/**
+ * The function `SystemPharmacy::saveProduct` reads product data from a file named "Product.txt" and
+ * initializes the appropriate product objects based on the data read. It populates the provided
+ * `hashmap` with instances of `Medicine`, `BabyProduct`, `MedEquipSupp`, `ProductCare`, or `SuppVit`
+ * classes, depending on the product category.
+ * 
+ * @param hashmap A reference to the `HashMap` object where the product data will be stored.
+ */
 void SystemPharmacy::saveProduct(HashMap hashmap) {
 
     // Opening the file
@@ -114,8 +142,6 @@ void SystemPharmacy::saveProduct(HashMap hashmap) {
 
         }
 
-        cout<<"hola prueba123";
-
         id = parts[0];
         category = parts[1];
         subCategory = parts[2];
@@ -123,12 +149,7 @@ void SystemPharmacy::saveProduct(HashMap hashmap) {
         name = parts[4];
 
         price = stoi(parts[5]);
-        cout<<"antes del cambio"<<endl;
-        cout<<name<<endl;
-
         numProducts = stoi(parts[6]);
-
-        cout<<"Despues del cambio";
 
         if (category == "medicine") {
 
@@ -165,6 +186,17 @@ void SystemPharmacy::saveProduct(HashMap hashmap) {
 
 }
 
+/**
+ * The function `SystemPharmacy::nextCustomer` processes the next customer in the queue and allows
+ * them to select products for purchase. It performs the following steps:
+ * 1. Retrieves the next customer from the `listCustomer`.
+ * 2. Prompts the customer to enter the name of a product or 'fin' to finish shopping.
+ * 3. Validates the product name and adds it to the shopping cart if found.
+ * 4. Displays the shopping cart and calculates the total price.
+ * 
+ * @param listCustomer A reference to the `ListCustomer` object containing the customer queue.
+ * @param hashmap A reference to the `HashMap` object containing product information.
+ */
 void SystemPharmacy::nextCustomer(ListCustomer& listCustomer,HashMap& hashmap) {
 
     Customer* presentCustomer = listCustomer.getNextCustomer();
@@ -210,6 +242,14 @@ void SystemPharmacy::nextCustomer(ListCustomer& listCustomer,HashMap& hashmap) {
     cout << "---------------------------\n\n";
 }
 
+/**
+ * The function `SystemPharmacy::newCustomer` adds a new customer to the system based on user input.
+ * It prompts the user to enter the customer's name, RUT (unique identifier), and age. Depending on
+ * the age and other attributes, it creates an instance of `Customer`, `ThirdAge`, `Disabled`, or
+ * `Pregnant` class and adds it to the provided `listCustomer`.
+ * 
+ * @param listCustomer A reference to the `ListCustomer` object where the new customer will be added.
+ */
 void SystemPharmacy::newCustomer(ListCustomer& listCustomer) {
 
     string name;
@@ -259,6 +299,14 @@ void SystemPharmacy::newCustomer(ListCustomer& listCustomer) {
     cout << "\nNuevo cliente agregado exitosamente!\n";
 }
 
+/**
+ * The function `SystemPharmacy::productSearchMenu` allows users to search for products based on their name.
+ * It prompts the user to enter the name of the product or type 'salir' to exit the menu. If the product is found
+ * in the provided `hashmap`, it displays information about the product, including its name, ID, subcategory,
+ * type, price, and stock quantity.
+ * 
+ * @param hashmap A reference to the `HashMap` where product information is stored.
+ */
 void SystemPharmacy::productSearchMenu(HashMap& hashmap) {
 
     string productName;
@@ -291,6 +339,13 @@ void SystemPharmacy::productSearchMenu(HashMap& hashmap) {
     cout << "\nSaliendo del menu de busqueda de productos.\n";
 }
 
+/**
+ * The function `SystemPharmacy::printAllProducts` retrieves all products from the provided `hashmap`
+ * and displays their details. It prints the name, ID, subcategory, type, price, and stock quantity
+ * for each product.
+ * 
+ * @param hashmap A reference to the `HashMap` containing product information.
+ */
 void SystemPharmacy::printAllProducts(HashMap& hashmap) {
 
     vector<Product*> allProducts = hashmap.getAllProducts();
@@ -310,6 +365,14 @@ void SystemPharmacy::printAllProducts(HashMap& hashmap) {
     cout << "\n--------------------------------------------------\n";
 }
 
+/**
+ * The function `SystemPharmacy::addProductToHashMap` prompts the user to input details for a new product.
+ * It asks for the product's name, ID, subcategory, type, price, and stock quantity. Based on the selected
+ * product type (e.g., baby products, supplements, medications), it creates an instance of the corresponding
+ * product class (e.g., `BabyProduct`, `Medicine`, etc.) and adds it to the provided `hashmap`.
+ * 
+ * @param hashmap A reference to the `HashMap` where product information will be stored.
+ */
 void SystemPharmacy::addProductToHashMap(HashMap& hashmap) {
 
     string name;
@@ -378,6 +441,20 @@ void SystemPharmacy::addProductToHashMap(HashMap& hashmap) {
     cout << "\nProducto agregado exitosamente!\n";
 }
 
+/**
+ * The function `SystemPharmacy::saveProductTxt` saves information about products to a text file.
+ * It takes a vector of pointers to `Product` objects (`listProduct`) as an argument.
+ * For each product in the vector, it writes the following details to the file:
+ *   - Product ID
+ *   - Product category
+ *   - Product subcategory
+ *   - Product type
+ *   - Product name
+ *   - Product price
+ *   - Quantity in stock
+ *
+ * @param listProduct A vector of pointers to `Product` objects containing product information.
+ */
 void SystemPharmacy::saveProductTxt(vector<Product*> listProduct){
     ofstream file;
 
@@ -397,6 +474,19 @@ void SystemPharmacy::saveProductTxt(vector<Product*> listProduct){
     }
 }
 
+/**
+ * The function `SystemPharmacy::saveCustomerTxt` saves information about customers to a text file named "Customer.txt".
+ * It takes a reference to a `ListCustomer` object (`ListCustomer`) as an argument.
+ * It retrieves queues of customers categorized by age (third age), disability status (disabled), pregnancy status (pregnant), and general customers.
+ * For each customer in each queue, it writes the following details to the file:
+ *   - Customer name
+ *   - Customer age
+ *   - Customer RUT (unique identifier)
+ *   - Whether the customer has a disability
+ *   - Whether the customer is pregnant
+ *
+ * @param ListCustomer A reference to the `ListCustomer` object containing customer information.
+ */
 void SystemPharmacy::saveCustomerTxt(ListCustomer& ListCustomer){
 
     queue<Customer*> listThirdAge = ListCustomer.getThirdAge();
@@ -452,6 +542,18 @@ void SystemPharmacy::saveCustomerTxt(ListCustomer& ListCustomer){
 
 }
 
+/**
+ * The function `SystemPharmacy::menu` displays a menu for managing pharmacy operations.
+ * It allows the user to perform the following actions:
+ *   1. Move to the next customer in the queue.
+ *   2. Add a new customer to the queue.
+ *   3. Check product availability in the warehouse.
+ *   4. View details of all products in the warehouse.
+ *   5. Add a new product to the warehouse.
+ *   6. Finish and save the changes.
+ *
+ * The function interacts with the provided `listCustomer` and `hashmap` (containing product information).
+ */
 void SystemPharmacy::menu() {
 
     bool exitOption = true;

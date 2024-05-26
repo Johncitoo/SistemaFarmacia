@@ -4,6 +4,9 @@
 
 using namespace std;
 
+/**
+ * The ListCustomer constructor in C++ is defined without any specific implementation.
+ */
 ListCustomer::ListCustomer() {
 
 }
@@ -54,6 +57,13 @@ void ListCustomer::addCustomer(Customer* customer) {
     
 }
 
+/**
+ * This function returns the next customer based on priority from different lists of customers.
+ * 
+ * @return A pointer to the next customer in the priority order of third age customers, disabled
+ * customers, pregnant customers, and regular customers. If there are no customers in any of these
+ * lists, a nullptr is returned.
+ */
 Customer* ListCustomer::getNextCustomer() {
 
     if (!listThirdAge.empty()) {
@@ -81,20 +91,46 @@ Customer* ListCustomer::getNextCustomer() {
         return customer;
 
     } 
+
+    return nullptr;
 }
 
+/**
+ * The function `getDisabled` returns a queue of pointers to Customer objects representing disabled
+ * customers.
+ * 
+ * @return A queue of pointers to Customer objects that are disabled.
+ */
 queue<Customer*> ListCustomer::getDisabled(){
     return listDisabled;
 }
 
+/**
+ * The function `getPregnant` returns a queue of pointers to Customer objects representing pregnant
+ * customers.
+ * 
+ * @return A queue of pointers to Customer objects who are pregnant is being returned.
+ */
 queue<Customer*> ListCustomer::getPregnant(){
     return listPregnant;
 }
 
+/**
+ * The function `getThirdAge` returns a queue of pointers to Customer objects representing third-age
+ * customers.
+ * 
+ * @return A queue of pointers to Customer objects who are considered to be of the third age.
+ */
 queue<Customer*> ListCustomer::getThirdAge(){
     return listThirdAge;
 }
 
+/**
+ * The function `getListCustomer` returns a queue of Customer pointers stored in the `listCustomer`
+ * member variable of the `ListCustomer` class.
+ * 
+ * @return A queue of pointers to Customer objects is being returned.
+ */
 queue<Customer*> ListCustomer::getListCustomer(){
     return listCustomer;
 }
