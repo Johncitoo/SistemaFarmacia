@@ -16,15 +16,26 @@ class Product {
     int price;
     int numProducts;
 
-    Product(string,string,string,string,int,int);
-    virtual ~Product();
-
     public:
-    string getName();
-    string getId();
-    string getSubCategory();
-    string getType();
-    int getPrice();
-    int getNumProducts();
+
+    Product(string,string,string,string,int,int);
+    ~Product();
+    void subtractProduct();
+
+    // Getters
+    string getName() const;
+    string getId() const;
+    string getSubCategory() const;
+    string getType() const;
+    int getPrice() const;
+    int getNumProducts() const;
+
+    // Setters
+    void setName(const string& name);
+    void setId(const string& id);
+    void setSubCategory(const string& subCategory);
+    void setType(const string& type);
+    void setPrice(int price);
+    void setNumProducts(int numProducts);
 
 };

@@ -53,3 +53,32 @@ void ListCustomer::addCustomer(Customer* customer) {
     this->listCustomer.push(customer);
     
 }
+
+Customer* ListCustomer::getNextCustomer() {
+
+    if (!listThirdAge.empty()) {
+
+        Customer* customer = listThirdAge.front();
+        listThirdAge.pop();
+        return customer;
+
+    } else if (!listDisabled.empty()) {
+
+        Customer* customer = listDisabled.front();
+        listDisabled.pop();
+        return customer;
+
+    } else if (!listPregnant.empty()) {
+
+        Customer* customer = listPregnant.front();
+        listPregnant.pop();
+        return customer;
+
+    } else if (!listCustomer.empty()) {
+
+        Customer* customer = listCustomer.front();
+        listCustomer.pop();
+        return customer;
+
+    } 
+}

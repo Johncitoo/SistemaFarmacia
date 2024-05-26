@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include "Product.h"
 
@@ -9,9 +10,8 @@ class HashNode {
     private:
 
     string key;
-    int value;
     Product* product;
-    HashNode *next;
+    HashNode* next;
 
     public:
 
@@ -23,7 +23,7 @@ class HashNode {
 
     void setProduct(Product* product);
 
-    HashNode *getNext();
+    HashNode* getNext();
 
     void setNext(HashNode *next);
 

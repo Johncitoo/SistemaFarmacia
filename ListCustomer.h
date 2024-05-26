@@ -29,7 +29,7 @@ class ListCustomer {
     void addDisabled(Customer*);
     void addPregnant(Customer*);
     void addCustomer(Customer*);
-
+    Customer* getNextCustomer();
     
     
 };

@@ -40,7 +40,8 @@
     "ostream": "cpp",
     "sstream": "cpp",
     "stdexcept": "cpp",
-    "streambuf": "cpp"
+    "streambuf": "cpp",
+    "hash_map": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

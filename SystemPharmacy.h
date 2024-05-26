@@ -10,6 +10,7 @@
 
 #include "Customer.cpp"
 #include "Product.cpp"
+#include "HashMap.cpp"
 
 // Sons class Customer
 
@@ -30,7 +31,6 @@
 #include "ListCustomer.cpp"
 
 
-
 using namespace std;
 
 
@@ -39,12 +39,20 @@ class SystemPharmacy {
     private:
 
     ListCustomer listCustomer;
+    HashMap hashmap;
+
+    void saveCustomer(ListCustomer&);
+    void saveProduct(HashMap);
+    void nextCustomer(ListCustomer&,HashMap&);
+    void newCustomer(ListCustomer&);
+    void productSearchMenu(HashMap& hashmap);
+    void printAllProducts(HashMap&);
+    void addProductToHashMap(HashMap&);
 
     public:
 
     SystemPharmacy();
-    void saveCustomer(ListCustomer&);
-
-    int prueba();
+    void menu();
+    
 
 };

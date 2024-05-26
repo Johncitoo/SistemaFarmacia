@@ -15,6 +15,7 @@ class Customer {
     public:
 
     Customer(string,string,int);
+    string getName();
     virtual ~Customer();
 
 };

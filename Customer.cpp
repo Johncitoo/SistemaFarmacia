@@ -12,3 +12,7 @@ Customer::Customer(string name,string rut,int age) {
 }
 
 Customer::~Customer(){}
+
+string Customer::getName() { 
+    return name; 
+}
