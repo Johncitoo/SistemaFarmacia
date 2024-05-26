@@ -11,7 +11,7 @@ int main()
     cout << "hola mundo" << endl;
 
     
-    SystemPharmacy system;
+    SystemPharmacy system(10);
     
     return 0;
 }

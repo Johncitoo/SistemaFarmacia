@@ -44,7 +44,7 @@ class SystemPharmacy {
 
     public:
 
-    SystemPharmacy();
+    SystemPharmacy(int size);
     void saveCustomer(ListCustomer&);
 
 

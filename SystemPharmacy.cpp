@@ -3,9 +3,10 @@
 
 using namespace std;
 
-SystemPharmacy::SystemPharmacy(){
+SystemPharmacy::SystemPharmacy(int size) : hashMap(size){
 
     saveCustomer(this->listCustomer);
+ 
 }
 
 void SystemPharmacy::saveCustomer(ListCustomer& listCustomer) {
