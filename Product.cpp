@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Product::Product(string name,string id,string subCategory,string type,int proce,int numProducts) {
+Product::Product(string name,string id,string subCategory,string type,int price,int numProducts) {
 
     this->name = name;
     this->id = id;

@@ -29,8 +29,7 @@
 
 #include "ListCustomer.cpp"
 
-// HashMap
-#include "HashMap.cpp"
+
 
 using namespace std;
 
@@ -40,11 +39,10 @@ class SystemPharmacy {
     private:
 
     ListCustomer listCustomer;
-    HashMap hashMap;
 
     public:
 
-    SystemPharmacy(int size);
+    SystemPharmacy();
     void saveCustomer(ListCustomer&);
 
     int prueba();

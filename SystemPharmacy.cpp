@@ -1,13 +1,13 @@
 #include "SystemPharmacy.h"
 #include <iostream>
+#include "HashMap.cpp"
 
 using namespace std;
 
-SystemPharmacy::SystemPharmacy(int size) : hashMap(size){
-
+SystemPharmacy::SystemPharmacy(){
     saveCustomer(this->listCustomer);
- 
 }
+
 
 void SystemPharmacy::saveCustomer(ListCustomer& listCustomer) {
 
@@ -76,7 +76,6 @@ void SystemPharmacy::saveCustomer(ListCustomer& listCustomer) {
 
     }
 
-    cout<<"Probando";
     delete part;
     delete name;
     delete age;
@@ -88,6 +87,7 @@ void SystemPharmacy::saveCustomer(ListCustomer& listCustomer) {
 
 int SystemPharmacy::prueba(){
 
+    HashMap hashMap(5);
     Product* product1 = new ProductCare("Product 1", "001", "SubCategory A", "Type X", 100, 10);
     Product* product2 = new ProductCare("Product 2", "002", "SubCategory B", "Type Y", 200, 20);
     
