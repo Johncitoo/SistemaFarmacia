@@ -18,9 +18,6 @@ Olga Silva;55;22334455-6;false;true
 Patricia Vega;26;66778899-0;false;true
 Veronica Blanco;34;00112233-4;false;true
 Teresa Cruz;39;44556677-8;false;true
-Juan Perez;65;12345678-9;false;false
-Carlos Sanchez;70;33445566-7;false;false
-Jose Diaz;62;55667788-9;false;false
 Ricardo Reyes;67;11223344-5;false;false
 Hugo Perez;75;33445566-7;false;false
 Diego Lopez;80;55667788-9;false;false

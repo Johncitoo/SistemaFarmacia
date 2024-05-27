@@ -1,6 +1,7 @@
 #include "SystemPharmacy.h"
 #include <iostream>
 #include <vector>
+#include <cctype>
 
 using namespace std;
 
@@ -148,6 +149,12 @@ void SystemPharmacy::saveProduct(HashMap hashmap) {
         type = parts[3];
         name = parts[4];
 
+        //The product name is converted to lowercase to avoid errors
+        for ( int i = 0; i < name.length() ; i++)
+        {
+            name[i] = tolower(name[i]);
+        }
+
         price = stoi(parts[5]);
         numProducts = stoi(parts[6]);
 
@@ -206,7 +213,14 @@ void SystemPharmacy::nextCustomer(ListCustomer& listCustomer,HashMap& hashmap) {
     cout << "\n\n---------- Cliente actual ----------\n";
     cout << "Nombre: " << presentCustomer->getName() << "\n\n";
     cout << "Ingrese el nombre del producto o 'fin' para terminar: ";
+    
     cin >> nameProduct;
+
+    //The product name is converted to lowercase to avoid errors
+        for ( int i = 0; i < nameProduct.length() ; i++)
+        {
+            nameProduct[i] = tolower(nameProduct[i]);
+        }
 
     while (nameProduct != "fin") {
 
@@ -224,6 +238,13 @@ void SystemPharmacy::nextCustomer(ListCustomer& listCustomer,HashMap& hashmap) {
 
         cout << "Ingrese el nombre del producto o 'fin' para terminar: ";
         cin >> nameProduct;
+
+        //The product name is converted to lowercase to avoid errors
+        for ( int i = 0; i < nameProduct.length() ; i++)
+        {
+            nameProduct[i] = tolower(nameProduct[i]);
+        }
+        
     }
 
     cout << "\n\n---------- BOLETA ----------";
