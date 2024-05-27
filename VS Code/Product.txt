@@ -1,40 +1,31 @@
-1023;medicine;antipyretic;tablet;Paracetamol;6;100
+8759;medicalequipmentandsupplies;scalpel;disposable;Feather;30;50
+8761;medicalequipmentandsupplies;nebulizer;electric;Philips;50;22
+1238;personalcare;mouthwash;antiseptic;Listerine;6;200
+6548;supplementandvitamins;iron;capsule;Slow Fe;11;140
 7894;babyproduct;diapers;disposable;Pampers;12;50
-4567;medicalequipmentandsupplies;bloodpressuremonitor;digital;Omron;40;20
+3457;personalcare;deodorant;stick;Dove;4;180
+1237;personalcare;shavingcream;foam;Gillette;4;180
 2345;personalcare;shampoo;organic;Herbal Essences;9;200
 8765;supplementandvitamins;multivitamin;capsule;Centrum;16;150
-9876;medicine;painreliever;gel;Ibuprofen;7;80
-3456;babyproduct;bottle;glass;Dr.Brown's;5;30
-5678;medicalequipmentandsupplies;thermometer;digital;Braun;20;50
-1234;personalcare;toothpaste;fluoride;Colgate;3;300
-6543;supplementandvitamins;fishoil;softgel;Nature Made;13;100
-6789;medicine;coughsyrup;liquid;Robitussin;9;120
-4321;babyproduct;wipes;sensitive;Huggies;6;60
-8764;medicalequipmentandsupplies;glucosemeter;digital;Accu-Chek;30;40
-3457;personalcare;deodorant;stick;Dove;4;180
-5432;supplementandvitamins;probiotic;capsule;Align;25;90
-2109;medicine;antacid;tablet;Tums;5;150
-3458;babyproduct;formula;powder;Similac;20;80
-6542;medicalequipmentandsupplies;stethoscope;analog;3M Littmann;90;25
-1235;personalcare;bodywash;liquid;Nivea;7;250
-8763;supplementandvitamins;vitamind;softgel;Nature's Bounty;8;200
-5431;medicine;allergyrelief;tablet;Claritin;12;140
-3459;babyproduct;pacifier;silicone;Philips Avent;4;100
 8762;medicalequipmentandsupplies;oximeter;digital;Zacurate;20;30
-1236;personalcare;lotion;moisturizing;Cetaphil;12;100
-6541;supplementandvitamins;calcium;chewable;Caltrate;10;130
-6540;medicine;antiseptic;liquid;Dettol;7;110
-3450;babyproduct;crib;wood;Graco;150;15
-8761;medicalequipmentandsupplies;nebulizer;electric;Philips;50;22
-1237;personalcare;shavingcream;foam;Gillette;4;180
+1234;personalcare;toothpaste;fluoride;Colgate;3;300
 5430;supplementandvitamins;fiber;powder;Metamucil;15;90
-9875;medicine;sleepaid;tablet;ZzzQuil;9;60
 3451;babyproduct;highchair;adjustable;Chicco;90;10
+6542;medicalequipmentandsupplies;stethoscope;analog;3M Littmann;90;25
+8763;supplementandvitamins;vitamind;softgel;Nature's Bounty;8;200
+4567;medicalequipmentandsupplies;bloodpressuremonitor;digital;Omron;40;20
+5432;supplementandvitamins;probiotic;capsule;Align;25;90
 8760;medicalequipmentandsupplies;bandage;adhesive;Band-Aid;3;300
-1238;personalcare;mouthwash;antiseptic;Listerine;6;200
-5439;supplementandvitamins;magnesium;tablet;Nature Made;8;160
-6549;medicine;nasalspray;decongestant;Afrin;12;70
+5678;medicalequipmentandsupplies;thermometer;digital;Braun;20;50
+3458;babyproduct;formula;powder;Similac;20;80
+1235;personalcare;bodywash;liquid;Nivea;7;250
+6541;supplementandvitamins;calcium;chewable;Caltrate;10;130
+3459;babyproduct;pacifier;silicone;Philips Avent;4;100
 3452;babyproduct;stroller;lightweight;UPPAbaby;200;8
-8759;medicalequipmentandsupplies;scalpel;disposable;Feather;30;50
+3456;babyproduct;bottle;glass;Dr.Brown's;5;30
+3450;babyproduct;crib;wood;Graco;150;15
+8764;medicalequipmentandsupplies;glucosemeter;digital;Accu-Chek;30;40
+1236;personalcare;lotion;moisturizing;Cetaphil;12;100
+4321;babyproduct;wipes;sensitive;Huggies;6;60
+5439;supplementandvitamins;magnesium;tablet;Nature Made;8;160
 1239;personalcare;handsoap;liquid;Softsoap;2;500
-6548;supplementandvitamins;iron;capsule;Slow Fe;11;140
