@@ -1,7 +1,6 @@
 #include "SystemPharmacy.h"
 #include <iostream>
 #include <vector>
-#include <cctype>
 
 using namespace std;
 
@@ -244,7 +243,7 @@ void SystemPharmacy::nextCustomer(ListCustomer& listCustomer,HashMap& hashmap) {
         {
             nameProduct[i] = tolower(nameProduct[i]);
         }
-        
+
     }
 
     cout << "\n\n---------- BOLETA ----------";
